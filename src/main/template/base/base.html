@@ -9,7 +9,6 @@
     <title>{{ name }} - Entertainment Platform</title>
 
     <!-- Bootstrap core CSS -->
-    {% static "" %}
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     
     <!-- Custom style CSS -->
@@ -28,6 +27,8 @@
         <p class="float-end mb-1">Powered by <a href="https://www.grassfoundation.io/eligibility">grass</a>
         </p>
         <p class="mb-1">ShowBlit a place of entertainment</p>
+        <p>Copyright © {% now 'Y' %} <a href="" class="text-white">ShowBlit</a> by <a href="https://preneure.com"
+            class="text-white">ShowBlit.com</a></p>
     </div> 
 </footer>
 {% endblock %}
