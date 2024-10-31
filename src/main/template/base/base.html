@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ShowBlit - a place of entertainment">
     <meta name="Eminence" content="ShowBlit">
+    {% block 'title' %}
     <title>{{ name }} - Entertainment Platform</title>
+    {% endblock %}
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -24,11 +26,11 @@
 {% block 'footer' %}
 <footer class="footer text-muted bg-dark py-5">
     <div class="container">
-        <p class="float-end mb-1">Powered by <a href="https://www.grassfoundation.io/eligibility">grass</a>
+        <p class="float-end mb-1 text-white-50">Powered by <a href="https://www.grassfoundation.io/eligibility">grass</a>
         </p>
-        <p class="mb-1">ShowBlit a place of entertainment</p>
-        <p>Copyright © {% now 'Y' %} <a href="" class="text-white">ShowBlit</a> by <a href="https://preneure.com"
-            class="text-white">ShowBlit.com</a></p>
+        <p class="mb-1 text-white-50">ShowBlit a place of entertainment</p>
+        <p class="mb-1 text-white-50">Copyright © {% now 'Y' %} <a href="" class="text-white-50">ShowBlit</a> by <a href="https://preneure.com"
+            class="text-white-50">ShowBlit.com</a></p>
     </div> 
 </footer>
 {% endblock %}
