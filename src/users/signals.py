@@ -17,3 +17,7 @@ def create_profile_location(sender, instance, created, **kwargs):
         profile_location = Location.objects.create()
         instance_location = profile_location
         instance.save()
+
+def delete_profile_location(sender, instance, *args, **kwargs):
+    if instance.location != None:
+        pass
