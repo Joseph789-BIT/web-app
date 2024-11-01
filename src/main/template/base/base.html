@@ -17,10 +17,10 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-white">
     {% if messages %}
     {% for message in messages %}
-    <div>
+    <div class="alert alert-info">
         {{ message }}
     </div>
     {% endfor %}
