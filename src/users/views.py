@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 def login_view(request):
@@ -11,9 +12,10 @@ def login_view(request):
             password = login_form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
-                pass
+                login(request, user)
+                return redirect('home')
             else:
-                pass
+                pass                
     elif request.method == 'GET':
         login_form = AuthenticationForm()
     return render(request, 'views/login.html', {'login_form': login_form})
