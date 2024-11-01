@@ -20,25 +20,39 @@
 <body class="bg-white">
     {% if messages %}
     {% for message in messages %}
-    <div class="alert alert-info">
+    <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>
         {{ message }}
     </div>
     {% endfor %}
     {% endif %}
 
-    {% block 'body'%}
+    {% block 'header' %}
+    <header class="p-3 bg-dark text-white w-100 nav-masthead">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="{% url 'home' %}"
+                    class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img class="bi me-2" width="32" height="32" src="{% static 'images/logo.png' %}"
+                        aria-label="Bootstrap">
+                </a>
+                {% if %}
+            </div>
+        </div>
+    </header>
+    {% endblock %}
 
+    {% block 'body'%}
     {% endblock %}
 </body>
 
 {% block 'footer' %}
 <footer class="footer text-muted bg-dark py-5">
     <div class="container">
-        <p class="float-end mb-1 text-white-50">Powered by <a href="https://www.grassfoundation.io/eligibility">grass</a>
+        <p class="float-end mb-1 text-white-50">Powered by <a class="text-black-50" href="https://www.grassfoundation.io/eligibility">grass</a>
         </p>
         <p class="mb-1 text-white-50">ShowBlit a place of entertainment</p>
-        <p class="mb-1 text-white-50">Copyright © {% now 'Y' %} <a href="" class="text-white-50">ShowBlit</a> by <a href="https://preneure.com"
-            class="text-white-50">ShowBlit.com</a></p>
+        <p class="mb-1 text-white-50">Copyright © {% now 'Y' %} <a href="" class="text-black-50">ShowBlit</a> by <a href="https://preneure.com"
+            class="text-black-50">ShowBlit.com</a></p>
     </div> 
 </footer>
 {% endblock %}

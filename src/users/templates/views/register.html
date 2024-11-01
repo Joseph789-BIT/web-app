@@ -10,6 +10,9 @@
             {% csrf_token %}
             {{ register_form|crispy }}
             <button class="w-100 btn btn-lg btn-danger" type="submit">Register</button>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+                <a class="nav-link active text-danger fw-bold d-flex px-4 p-3" aria-current="page" href="{% url 'login' %}">Login</a>
+            </nav>
             <p class="mt-5 mb-3 text-muted">Copyright © {% now 'Y' %}ShowBLit</p>
         </form>
     </main>
