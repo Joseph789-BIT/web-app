@@ -23,4 +23,5 @@ def list_view(request):
     if request.method == ' POST':
         pass
     elif request.method == 'GET':
+        pass
         return render(request, 'views/main.html', {})
