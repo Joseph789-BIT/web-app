@@ -62,7 +62,7 @@ ROOT_URLCONF = 'showblit.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'main/template'),
+        'DIRS': [os.path.join(BASE_DIR, 'main/templates'),
                  os.path.join(BASE_DIR, 'src/users/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
