@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 from .models import Listing
+from .forms import ListingForm
 
 
 def main_view(request):
@@ -23,5 +24,5 @@ def list_view(request):
     if request.method == ' POST':
         pass
     elif request.method == 'GET':
-        pass
-        return render(request, 'views/list.html', {})
+        listing_form = ListingForm()
+        return render(request, 'views/list.html', {'listing_form': listing_form,})
