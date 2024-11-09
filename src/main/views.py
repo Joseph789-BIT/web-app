@@ -46,3 +46,11 @@ def list_view(request):
         listing_form = ListingForm()
         location_form = LocationForm()
         return render(request, 'views/list.html', {'listing_form': listing_form, 'location_form': location_form})
+    
+@login_required
+def listing_view(request):
+    return render(request, 'views/listing.html', {})
+
+@login_required
+def profile_view(request):
+    pass
