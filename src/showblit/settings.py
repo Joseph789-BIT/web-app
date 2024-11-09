@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'main',
     'users',
     'crispy_forms',
+    'django_filters',
     'crispy_bootstrap4',
 ]
 
