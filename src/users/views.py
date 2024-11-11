@@ -57,9 +57,9 @@ class ProfileView(View):
 
 
     def get(self, request):
-        user_form = UserForm()
-        profile_form = ProfileForm()
-        location_form = LocationForm()
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+        location_form = LocationForm(instance=request.user.profile.location)
         return render(request, 'views/profile.html', {'user_form': user_form, 
                                                       'profile_form': profile_form, 
                                                       'location_form': location_form})
