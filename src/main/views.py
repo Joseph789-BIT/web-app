@@ -58,7 +58,3 @@ def listing_view(request, id):
         messages.error(request, f'Invalid UID {id} was provided for listing.')
         return redirect('home')
     return render(request, 'views/listing.html', {})
-
-@login_required
-def profile_view(request):
-    pass
