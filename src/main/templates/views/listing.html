@@ -12,9 +12,26 @@
                 <img src="{{ listing.image.url }}" class="d-block mx-lg-auto img-fluid" width="1920" height="1080" loading="lazy">
             </div>
             <div class="col-lg-6">
-                
+                <h1 class="display-5 fw-bold lh-1 mb-3">
+                    {{ listing.model }}
+                </h1>
+                <p class="lead">{{ listing.seller.user.username }}</p>
             </div>
         </div>
     </section>
+    <div class="bg-light">
+        <div class="container px-4 py-5">
+            <h2 class="mb-3 boder-bottom" style="color: black;">Auto Information</h2>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col-lg-8">
+                    <div class="table-reponsive">
+                        <table class="table text-center">
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 {% endblock %}
