@@ -48,7 +48,15 @@ def list_view(request):
         return render(request, 'views/list.html', {'listing_form': listing_form, 'location_form': location_form})
     
 @login_required
-def listing_view(request):
+def listing_view(request, id):
+    try:
+        listing = Listing.object.get(id=id)
+        if listing is None:
+            raise Exception
+        return render(request, 'views/listing.html', {})
+    except Exception as e:
+        messages.error(request, f'Invalid UID {id} was provided for listing.')
+        return redirect('home')
     return render(request, 'views/listing.html', {})
 
 @login_required
