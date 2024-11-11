@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib import messages
 from django.views import View
+from .forms import UserForm, ProfileForm, LocationForm
+
 
 
 def login_view(request):
@@ -55,4 +57,9 @@ class ProfileView(View):
 
 
     def get(self, request):
-        return render(request, 'views/profile.html', {})
+        user_form = UserForm()
+        profile_form = ProfileForm()
+        location_form = LocationForm()
+        return render(request, 'views/profile.html', {'user_form': user_form, 
+                                                      'profile_form': profile_form, 
+                                                      'location_form': location_form})
