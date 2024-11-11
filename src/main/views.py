@@ -50,7 +50,7 @@ def list_view(request):
 @login_required
 def listing_view(request, id):
     try:
-        listing = Listing.object.get(id=id)
+        listing = Listing.objects.get(id=id)
         if listing is None:
             raise Exception
         return render(request, 'views/listing.html', {'listing': listing})
