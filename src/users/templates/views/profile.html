@@ -35,6 +35,13 @@
                 </div>
             </div>
         </div>
+        <table class="table table-hover">
+            <tbody>
+                {% for listing in user_listings %}
+                <td>{{ listing.id }}</td>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 {% endblock %}
