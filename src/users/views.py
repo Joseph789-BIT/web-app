@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib import messages
 from django.views import View
+from main.models import Listing
 from .forms import UserForm, ProfileForm, LocationForm
 
 
@@ -57,12 +58,14 @@ class ProfileView(View):
 
 
     def get(self, request):
+        user_listings = Listing.objects.filter(seller=request.user.profile)
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
         location_form = LocationForm(instance=request.user.profile.location)
         return render(request, 'views/profile.html', {'user_form': user_form, 
                                                       'profile_form': profile_form, 
-                                                      'location_form': location_form})
+                                                      'location_form': location_form, 
+                                                      'user_listings': user_listings})
 
     def post(self, request):
         user_form = UserForm(request.POST, instance=request.user)
