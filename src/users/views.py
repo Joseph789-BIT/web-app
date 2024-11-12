@@ -63,3 +63,11 @@ class ProfileView(View):
         return render(request, 'views/profile.html', {'user_form': user_form, 
                                                       'profile_form': profile_form, 
                                                       'location_form': location_form})
+
+    def post(self, request):
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(
+            request.POST, request.FILES, instance=request.user.profile)
+        location_form = LocationForm(
+            request.POST, instance=request.user.profile.location)
+        if user_form.is_valid() and profile_form.is_valid() and location_form.is_valid()
