@@ -3,6 +3,7 @@ CARS_BRANDS = (
     ('mercedes benz', 'Mercedes Benz'),
     ('audi', 'Audi'),
     ('subaru', 'Subaru'),
+    ('dodge', 'Dodge'),
     ('tesla', 'Tesla'),
     ('jaguar', 'Jaguar'),
     ('land rover', 'Land Rover'),
