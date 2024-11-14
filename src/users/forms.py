@@ -13,6 +13,7 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'first_name', 'last_name')
 
 class ProfileForm(forms.ModelForm):
+    photo = forms.ImageField()
     
 
     class Meta:
