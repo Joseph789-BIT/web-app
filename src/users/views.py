@@ -66,7 +66,7 @@ class ProfileView(View):
                                                       'profile_form': profile_form, 
                                                       'location_form': location_form, 
                                                       'user_listings': user_listings})
-
+    
     def post(self, request):
         user_listings = Listing.objects.filter(seller=request.user.profile)
         user_form = UserForm(request.POST, instance=request.user)
