@@ -1,7 +1,9 @@
 CARS_BRANDS = (
     ('bmw', 'BMW'),
     ('mercedes benz', 'Mercedes Benz'),
+    ('maserati','Maserati'),
     ('audi', 'Audi'),
+    ('kia', 'KIA'),
     ('subaru', 'Subaru'),
     ('dodge', 'Dodge'),
     ('tesla', 'Tesla'),
