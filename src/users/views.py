@@ -60,7 +60,7 @@ class ProfileView(View):
     def get(self, request):
         user_listings = Listing.objects.filter(seller=request.user.profile)
         user_liked_listings = LikedListing.objects.filter(
-            seller=request.user.profile).all()
+            profile=request.user.profile).all()
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
         location_form = LocationForm(instance=request.user.profile.location)
@@ -73,7 +73,7 @@ class ProfileView(View):
     def post(self, request):
         user_listings = Listing.objects.filter(seller=request.user.profile)
         user_liked_listings = LikedListing.objects.filter(
-            seller=request.user.profile).all()
+            profile=request.user.profile).all()
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = ProfileForm(
             request.POST, request.FILES, instance=request.user.profile)
