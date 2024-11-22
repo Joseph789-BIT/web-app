@@ -1,5 +1,5 @@
 from importlib import reload
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -104,3 +104,7 @@ def like_listing_view(request, id):
         liked_listing.delete()
     else:
         liked_listing.save()
+
+    return JsonResponse({
+        'is_liked_by_user': created,
+    })
