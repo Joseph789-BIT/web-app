@@ -20,6 +20,7 @@
             </div>
             <div class="col-lg-6 col-md-8 mx-auto">
                 <form method="get">
+                    {% csrf_token %}
                     {{ listing_filter.form|crispy }}
                     <button class="btn btn-sm btn-danger" type="submit">Submit</button>
                 </form>
