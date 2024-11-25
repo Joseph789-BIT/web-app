@@ -3,13 +3,14 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.views import View
 from main.models import Listing, LikedListing
 from .forms import UserForm, ProfileForm, LocationForm
 
 
-
+@csrf_exempt
 def login_view(request):
     if request.method == 'POST':
         login_form = AuthenticationForm(request=request, data=request.POST)

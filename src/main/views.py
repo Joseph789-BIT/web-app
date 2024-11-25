@@ -98,6 +98,7 @@ def edit_view(request, id):
             request, f'An error occured while trying to access the edit page.')
         return redirect('home')
 
+
 @login_required
 def like_listing_view(request, id):
     listing = get_object_or_404(Listing, id=id)
@@ -119,10 +120,20 @@ def inquire_listing_using_email(request, id):
     listing = get_object_or_404(Listing, id=id)
     try:
         emailSubject = f'{request.user.username} is interested in {listing.model}'
-        send_mail()
+        emailMessage = f'Hi {listing.seller.useer.username}, {request.user.username} is interested in your {listing.moddel} listing on AutoMax'
+        send_mail(
+            emailSubject, 
+            emailMessage, 
+            'oxeejo@gmail.com', 
+                  [listing.seller.user.email], 
+                  fail_silently=True)
     except Exception as e:
         print(e)
         return JsonResponse({
             "success": False,
-            "info": e,
+            "error": str(e),  # Include the error message for debugging
         })
+
+    return JsonResponse({
+        "success": True,
+    })

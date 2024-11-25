@@ -21,7 +21,7 @@
 {% block 'body' %}
 <div class="text-center">
     <main class="form-signin">
-        <form action="" method="post">
+        <form action="" method="POST">
             <img class="mb-4" src="{% static 'images/logo.png' %}" alt="" width="72" height="72">
             {% csrf_token %}
             {{ register_form|crispy }}
